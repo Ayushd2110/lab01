@@ -11,9 +11,10 @@ object ClassesObjects {
         println("1-")
         println("This is default dice")
         var dice =Dice()
-        sideUp = dice.sideUp
-        sides = dice.sides
-        name = dice.diceName
+
+        sideUp = dice.getSideUp()
+        sides = dice.getSides()
+        name = dice.diceName()
         showDiceData(sides, sideUp, name)
         println("\n")
 
@@ -26,9 +27,9 @@ object ClassesObjects {
         println("2-")
         println("This is  dice with number of sides parameter")
         var diceWithSides = Dice(10)
-        sideUp = diceWithSides.sideUp
-        sides = diceWithSides.sides
-        name = diceWithSides.diceName
+        sideUp = diceWithSides.getSideUp()
+        sides = diceWithSides.getSides()
+        name = diceWithSides.diceName()
         showDiceData(sides, sideUp, name)
         println("\n")
 
@@ -41,9 +42,9 @@ object ClassesObjects {
         println("3-")
         println("This is dice with number of sides and name parameter")
         var diceWithNameAndSides = Dice(10, "Death Roll")
-        sideUp = diceWithNameAndSides.sideUp
-        sides = diceWithNameAndSides.sides
-        name = diceWithNameAndSides.diceName
+        sideUp = diceWithNameAndSides.getSideUp()
+        sides = diceWithNameAndSides.getSides()
+        name = diceWithNameAndSides.diceName()
         showDiceData(sides, sideUp, name)
         println("\n")
 
@@ -78,10 +79,10 @@ object ClassesObjects {
     // Shows Side up before and after a single roll
     //
     fun diceResultBeforeAndAfter(dice: Dice) {
-        var sideUp = dice.sideUp
+        var sideUp = dice.getSideUp()
         println("Face before roll: $sideUp")
         dice.roll()
-        var sideUpAfterRoll = dice.sideUp
+        var sideUpAfterRoll = dice.getSideUp()
         println("Face after roll: $sideUpAfterRoll")
     }
 
@@ -101,8 +102,7 @@ object ClassesObjects {
         var i = 0
         while (i < diceArray.size) {
             val dice = diceArray[i]
-            dice!!.roll()
-            val sideUp = dice.sideUp
+            val sideUp = dice!!.roll()
             if (prevSide == -1) {
                 prevSide = sideUp
             } else if (prevSide != sideUp) {
