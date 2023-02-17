@@ -58,9 +58,7 @@ object ClassesObjects {
         println("4-")
         diceWithSides.showHighestValue()
 
-        // ************ BONUS (optional): create 5 six-sided dice. Roll each Die in a
-        // loop until you get 5 of a kind. Count and display the number of rolls.
-        // ************
+        
         println("\n")
         println("5-")
         find5OfKind()
